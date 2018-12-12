@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<header>
+    <meta charset="UTF-8">
+    <title th:text="${customer.FirstName}"></title>
+    <link rel="stylesheet" href="../stylesheets/styles.css" type="text/css" media="screen"/>
+</header>
+<body>
+<nav class="topmenu"
+<a href="/">Se alle kunder</a>
+<a href="/newContact">Opret ny kunde</a>
+<a href="/logout" class="item">Log ud</a>
+</nav>
+
+<a href="/" class="btn greyBtn">&laquo; Alle kunder</a>
+<h1 style="clear: both;" th:text="${customer.FirstName + ' ' + customer.LastName}"></h1>
+<a th:href="${'/newnote/' + customer.Id}" class="btn greyBtn">+ Ny note</a>
+
+<p th:each="note :${notes}">
+    <a th:href="${'/readnote/'+note.id}" th:text="${note.id}"/>
+    <span th:text="${note.subject}"/>
+    <span th:utext="${note.content}"/>
+    <span th:utext="${note.timestamp}"/>
+    <a th:href="${'/editnote/'+note.id}" th:text="Rediter"/>
+    <a th:href="${'/deletenote/'+note.id}" th:text="Slet"/>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<header>
+    <meta charset="UTF-8">
+    <title text="Ny kontakt"></title>
+    <link rel="stylesheet" href="../stylesheets/styles.css" media="screen"/>
+</header>
+<body>
+<nav class="topmenu"
+<a href="/">Se alle kunder</a>
+<a href="/newContact">Opret ny kunde</a>
+<a href="/logout" class="item">Log ud</a>
+</nav>
+<h1 th:text="${'Kundeside: ' + customer.FirstName + ' ' + customer.LastName}"></h1>
+<a th:href="${'/custview/' + customer.Id}" class="btn greyBtn">&laquo; Gå tilbage</a>
+
+<form th:action="${'/newnote/' + customer.Id}" method="post" style="clear: both;">
+    <strong><br>NY NOTE:<br></strong>
+    <input type="hidden" th:name="owner" th:value="${customer.id}">
+    Titel: <input type="text" name="subject" placeholder="Notens titel"/><br>
+    Indhold:<br>
+    <textarea name="content" style="width: 33%;height: 200px;"></textarea>
+    <br><br><input type="submit" value="Opret note"/>
+</form>
+</body>
+</html>

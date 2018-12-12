@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="Head (pageTitle)">
+    <meta charset="UTF-8">
+    <title th:text="${pageTitle}"></title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" media="screen"/>
+</head>
+<body>
+<nav th:fragment="Topmenu (activeMenuItem)" class="topmenu">
+    <a href="/" th:class="${activeMenuItem == 'index' ? 'active' : ''} + ' item'">Se alle kunder</a>
+    <a href="/newContact" th:class="${activeMenuItem == 'newcontact' ? 'active' : ''} + ' item'">Opret ny kunde</a>
+    <a href="#" th:class="${activeMenuItem == 'custsingle' ? 'active' : ''} + ' item'">Kundeinfo</a>
+    <a href="/logout" class="item">Log ud</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,111 @@
+*, html {
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    display: block;
+    width: auto;
+    float: left;
+    padding: 3px 5px;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.btn.greyBtn {
+    background: #ddd;
+    border: 1px #bbb solid;
+    color: #333;
+}
+
+.topmenu {
+    width: 100%;
+    background: #cdcdcd;
+    border-bottom: 2px #ababab solid;
+    height: 34px;
+    margin-bottom: 35px;
+}
+
+.topmenu .item {
+    color: #333;
+    text-decoration: red;
+    display: block;
+    float: left;
+    padding: 8px 16px;
+}
+
+.topmenu .item.active, .topmenu .item:hover {
+    background: #bbb;
+}
+
+.topmenu .item.active {
+    font-weight: bold;
+}
+
+.custviewrow td {
+    cursor: pointer;
+}
+
+/* Template */
+.NotesContainer {
+    width: 95%;
+    height: auto;
+    clear: both;
+    margin: 0 auto;
+}
+
+.NoteItem {
+    float: left;
+    width: 24%;
+    border: 1px #999 solid;
+    margin-right: 1%;
+    background: #f0f0f0;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.NoteTitle {
+    display: block;
+    background: #333;
+    padding: 10px 0;
+    text-align: center;
+    color: #eee;
+    position: relative;
+}
+
+.NoteTitle .crudBtns {
+    display: block;
+    position: absolute;
+    color: #ff0;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.NoteTitle .editBtn {
+    left: auto;
+    margin-left: 5px;
+}
+
+.NoteTitle .deleteBtn {
+    right: 0;
+    left: auto;
+    margin-right: 5px;
+}
+
+.NoteTitle .Title {
+    display: block;
+    font-size: 16px;
+}
+
+.NoteTitle .Datestamp {
+    display: block;
+    font-size: 12px;
+}
+
+.NoteContent {
+    display: block;
+    margin: 5px;
+}

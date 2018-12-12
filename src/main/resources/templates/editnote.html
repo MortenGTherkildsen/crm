@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<header>
+    <meta charset="UTF-8">
+    <title text="Rediger note"></title>
+    <link rel="stylesheet" href="../stylesheets/styles.css" type="text/css" media="screen"/>
+</header>
+<body>
+<nav class="topmenu"
+<a href="/">Se alle kunder</a>
+<a href="/newContact">Opret ny kunde</a>
+<a href="/logout" class="item">Log ud</a>
+</nav>
+
+<a th:href="${'/deletenote/' + note.id}" class="btn greyBtn">&laquo; Slet Note</a>
+
+<form th:action="${'/editnote/' + note.id}" method="post" style="clear: both;">
+    <input type="hidden" th:name="owner" th:value="${note.owner}">
+
+    <strong><br>REDIGER NOTE:<br></strong>
+    Titel: <input type="text" name="subject" th:value="${note.subject}" placeholder="Notens titel"/><br>
+    Indhold:<br>
+    <textarea name="content" style="width: 33%;height: 200px;" th:text="${note.content}"></textarea>
+    <br><br><input type="submit" value="Gem ændringer"/>
+</form>
+</body>
+</html>
