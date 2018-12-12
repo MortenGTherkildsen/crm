@@ -64,7 +64,7 @@ public class CRMController {
     @GetMapping("/custview/{custId}")
     public String custview(@PathVariable("custId") int custId, Model model) {
         model.addAttribute("customer", contactService.fetchOneContact(custId));
-        model.addAttribute("notes", contactService.fetchOneContact(custId).getNotes());
+        model.addAttribute("numNotes", contactService.fetchOneContact(custId).getNotes().size());
         return UserInfoCheck("/custsingleview");
     }
 
@@ -82,8 +82,15 @@ public class CRMController {
         return "redirect:/custview/" + id;
     }
 
+    @GetMapping("/readnotes/{custId}")
+    public String readnotes(@PathVariable("custId") int custId, Model model) {
+        model.addAttribute("customer", contactService.fetchOneContact(custId));
+        model.addAttribute("custNotes", contactService.fetchOneContact(custId).getNotes());
+        return UserInfoCheck("/readnotes");
+    }
+
     @GetMapping("/readnote/{id}")
-    public String readnotes(@PathVariable("id") int id, Model model) {
+    public String readnote(@PathVariable("id") int id, Model model) {
         model.addAttribute("note", noteService.readNote(id));
         model.addAttribute("customer", noteService.readNote(id).getOwner());
         return UserInfoCheck("/readnote");
@@ -91,6 +98,7 @@ public class CRMController {
 
     @GetMapping("/editnote/{id}")
     public String editnote(@PathVariable("id") int id, Model model) {
+        model.addAttribute("customer", noteService.readNote(id).getOwner());
         model.addAttribute("note", noteService.readNote(id));
         return UserInfoCheck("/editnote");
     }

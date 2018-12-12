@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/template :: Head (pageTitle=${'Kundeside: ' + customer.FirstName + ' ' + customer.LastName})"></head>
+<body>
+<nav th:replace="fragments/template :: Topmenu (activeMenuItem=${'custsingle'})"></nav>
+
+<h1 th:text="${'Kundeside: ' + customer.FirstName + ' ' + customer.LastName}"></h1>
+<a th:href="${'/custview/' + customer.Id}" class="btn greyBtn">&laquo; Gå tilbage</a>
+
+<div class="NotesContainer">
+    <div class="NoteItem" th:each="note: ${custNotes}" th:id="${note.id}">
+            <span class="NoteTitle">
+                <a th:href="${'/editnote/' + note.id}" class="crudBtns editBtn">&#9998;</a>
+                <span class="crudBtns deleteBtn" onclick="javascript: deleteNote(this);">x</span>
+                <span class="Title" th:text="${note.subject}"></span>
+                <span class="Datestamp" th:text="${note.timestamp}"></span>
+            </span>
+        <span class="NoteContent" th:text="${note.content}"></span>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function deleteNote(elem) {
+        var parentNoteTitle = elem.parentNode;
+        var parentNoteItem = parentNoteTitle.parentNode;
+
+        if (confirm("Er du sikker på at du vil slette denne note?")) {
+            var id = parentNoteItem.id;
+            window.location.href = "/deletenote/" + id;
+        }
+    }
+</script>
+</body>
+</html>

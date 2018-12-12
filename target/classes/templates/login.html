@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Log ind i CRM</title>
+</head>
+<body>
+<p>Log ind i CRM-Systemet</p>
+
+<form action="/login" method="post">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <input type="submit" value="Log ind">
+    <br>
+    <span th:text="${loginError}"></span>
+</form>
+</body>
+</html>

@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
 public class UserInfo {
     public static String username = "admin";
     public static String password = "f0480c4f5bd0ad186514b2d7d26f63393967bc7b5ff2f480c9f6e22cce2bc3369b4a4b2f303e42b9464a2470d2452524a3e938d25d3f1babe476f2e8378a7c20";
-    public static boolean isLoggedIn = false;
+    public static boolean isLoggedIn = true;
     public static String loginError = "";
 
     public static boolean checkLogin(String userInput, String passInput) {

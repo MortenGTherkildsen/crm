@@ -1,22 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<header>
-    <meta charset="UTF-8">
-    <title text="Læs note"></title>
-    <link rel="stylesheet" href="../stylesheets/styles.css" media="screen"/>
-</header>
+<head th:replace="fragments/template :: Head (pageTitle=${'Kundeside: ' + customer.FirstName + ' ' + customer.LastName})"></head>
 <body>
-<nav class="topmenu"
-<a href="/">Se alle kunder</a>
-<a href="/newContact">Opret ny kunde</a>
-<a href="/logout" class="item">Log ud</a>
-</nav>
+<nav th:replace="fragments/template :: Topmenu (activeMenuItem=${'custsingle'})"></nav>
 
 <h1 th:text="${'Kundeside: ' + customer.FirstName + ' ' + customer.LastName}"></h1>
 <a th:href="${'/custview/' + customer.Id}" class="btn greyBtn">&laquo; Gå tilbage</a>
 
 <div class="NotesContainer">
-    <div class="NoteItem" th:id="${note.id}">
+    <div class="NoteItem" th:each="note: ${custNotes}" th:id="${note.id}">
             <span class="NoteTitle">
                 <a th:href="${'/editnote/' + note.id}" class="crudBtns editBtn">&#9998;</a>
                 <span class="crudBtns deleteBtn" onclick="javascript: deleteNote(this);">x</span>
