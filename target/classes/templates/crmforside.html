@@ -4,33 +4,17 @@
 <body>
 <nav th:replace="fragments/template :: Topmenu (activeMenuItem=${'index'})"></nav>
 
-<table cellspacing="2" cellpadding="2" border="1">
+<table cellspacing="2" cellpadding="2" border="1" width="25%">
     <thead>
     <tr>
         <th>Fornavn</th>
         <th>Efternavn</th>
-        <th colspan="15">Andre felter...</th>
     </tr>
     </thead>
     <tbody>
     <tr class="custviewrow" onclick="redirectSingleView(this)" th:each="contact: ${contacts}" th:id="${contact.Id}">
         <td th:text="${contact.FirstName}"/>
         <td th:text="${contact.LastName}"/>
-        <td th:text="${contact.NickName}"/>
-        <td th:text="${contact.Email}"/>
-        <td th:text="${contact.Phone}"/>
-        <td th:text="${contact.CVR}"/>
-        <td th:text="${contact.DOB}"/>
-        <td th:text="${contact.Adress1}"/>
-        <td th:text="${contact.Adress2}"/>
-        <td th:text="${contact.City}"/>
-        <td th:text="${contact.PostalCode}"/>
-        <td th:text="${contact.Country}"/>
-        <td th:text="${contact.Website}"/>
-        <td th:text="${contact.Facebook}"/>
-        <td th:text="${contact.Trello}"/>
-        <td th:text="${contact.GitHub}"/>
-        <td th:text="${contact.Gmail}"/>
     </tr>
     </tbody>
 </table>

@@ -65,6 +65,7 @@ public class CRMController {
     public String custview(@PathVariable("custId") int custId, Model model) {
         model.addAttribute("customer", contactService.fetchOneContact(custId));
         model.addAttribute("numNotes", contactService.fetchOneContact(custId).getNotes().size());
+        model.addAttribute("customFields", contactService.contactFields());
         return UserInfoCheck("/custsingleview");
     }
 

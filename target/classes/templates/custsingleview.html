@@ -9,5 +9,13 @@
 <a th:href="${'/newnote/' + customer.Id}" class="btn greyBtn">+ Ny note</a>
 
 <a th:href="${'/readnotes/' + customer.Id}" class="btn greyBtn" th:text="${'Noter (' + numNotes + ')'}" th:style="${'display: ' + (numNotes > 0 ? 'block' : 'none') + ';'}"></a>
+
+<div class="CustomerContainer" style="clear: both;margin-top: 20px;">
+    <table cellpadding="2" border="1" width="25%">
+        <tr th:each="fields: ${customFields}">
+            <td th:utext="${'<strong>' + fields + ':</strong><br>INDHOLD'}"></td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
