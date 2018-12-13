@@ -1,6 +1,7 @@
 package com.example.crm.service;
 
 import com.example.crm.model.Contact;
+import com.example.crm.model.Utilities;
 import com.example.crm.repository.IContactRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,9 +21,7 @@ public class ContactServiceImpl implements IContactService {
     }
 
     @Override
-    public Contact fetchOneContact(int id) {
-        return contactRepo.getOne(id);
-    }
+    public Contact fetchOneContact(int id) { return contactRepo.getOne(id); }
 
     @Override
     public Contact updateContact(Contact contact) {

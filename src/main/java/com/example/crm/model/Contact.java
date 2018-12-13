@@ -66,8 +66,8 @@ public class Contact {
     private List<Note> Notes;
 
     public Contact(String firstName, String lastName, String nickName, String email, String phone, String CVR, String DOB, String adress1, String adress2, String city, String postalCode, String country, String website, String facebook, String trello, String gitHub, String gmail, List<Note> noteList) {
-        FirstName = firstName;
-        LastName = lastName;
+        FirstName = Utilities.StringEncrypt(firstName);
+        LastName = Utilities.StringEncrypt(lastName);
         NickName = nickName;
         Email = email;
         Phone = phone;
@@ -122,29 +122,21 @@ public class Contact {
         Id = id;
     }
 
-    public String getFirstName() {
-        return FirstName;
-    }
+    public String getFirstName() { return Utilities.StringDecrypt(FirstName); }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        FirstName = Utilities.StringEncrypt(firstName);
     }
 
-    public String getLastName() {
-        return LastName;
-    }
+    public String getLastName() { return Utilities.StringDecrypt(LastName); }
 
-    public void setLastName(String lastName) {
-        LastName = lastName;
-    }
+    public void setLastName(String lastName) { LastName = Utilities.StringEncrypt(lastName); }
 
     public String getNickName() {
         return NickName;
     }
 
-    public void setNickName(String nickName) {
-        NickName = nickName;
-    }
+    public void setNickName(String nickName) { NickName = Utilities.StringEncrypt(nickName); }
 
     public String getEmail() {
         return Email;
