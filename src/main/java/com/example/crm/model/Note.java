@@ -82,7 +82,7 @@ public class Note {
         this.status = status;
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "Note{" +
                 "id=" + id +
@@ -92,5 +92,5 @@ public class Note {
                 ", timestamp='" + timestamp + '\'' +
                 ", status=" + status +
                 '}';
-    }
+    }*/
 }

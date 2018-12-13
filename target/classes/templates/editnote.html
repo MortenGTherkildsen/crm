@@ -8,6 +8,7 @@
 
 <form th:action="${'/editnote/' + note.id}" method="post" style="clear: both;">
     <input type="hidden" th:name="owner" th:value="${note.owner}">
+    <input type="hidden" name="id" th:value="${note.id}"/>
 
     <strong><br>REDIGER NOTE:<br></strong>
     Titel: <input type="text" name="subject" th:value="${note.subject}" placeholder="Notens titel"/><br>
