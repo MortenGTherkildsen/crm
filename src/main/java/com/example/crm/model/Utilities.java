@@ -41,7 +41,7 @@ public class Utilities {
 
         c.setTime(date);
         Datestamp += c.get(Calendar.DATE);
-        Datestamp += "/" + c.get(Calendar.MONTH);
+        Datestamp += "/" + (c.get(Calendar.MONTH)+1);
         Datestamp += " " + c.get(Calendar.YEAR);
 
         Datestamp += " " + c.get(Calendar.HOUR_OF_DAY);
