@@ -32,7 +32,7 @@ CREATE TABLE `notes` (
 `subject` VARCHAR(255) NULL ,
 `content` VARCHAR(1023) NULL ,
 `owner` INT NOT NULL ,
-`timestamp` VARCHAR(20) NULL ,
+`timestamp` VARCHAR(255) NULL ,
 `status` INT(1) NULL ,
 PRIMARY KEY (`id`),
 KEY `owner_idx` (`owner`),

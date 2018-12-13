@@ -3,6 +3,7 @@ package com.example.crm.controller;
 import com.example.crm.model.Contact;
 import com.example.crm.model.Note;
 import com.example.crm.model.UserInfo;
+import com.example.crm.model.Utilities;
 import com.example.crm.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,10 @@ public class CRMController {
     INoteService noteService;
 
     public String UserInfoCheck(String template) {
+        String encrypted = Utilities.encrypt("lEle");
+        System.out.println("Krypteret "+encrypted);
+        String decrypted = Utilities.decrypt(encrypted);
+        System.out.println("Dekrypteret "+decrypted);
         if (UserInfo.isLoggedIn) {
             return template;
         } else {
@@ -36,10 +41,10 @@ public class CRMController {
 
             model.addAttribute("contacts", contactService.fetchAllContacts());
             System.out.println("Efter servicekald til contactService.fetchAllContacts()");
-            return "/crmforside";
+            return UserInfoCheck("/crmforside");
         } else {
             model.addAttribute("loginError", UserInfo.loginError);
-            return "/login";
+            return UserInfoCheck("/login");
         }
     }
 

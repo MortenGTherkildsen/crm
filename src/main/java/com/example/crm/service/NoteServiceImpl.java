@@ -5,6 +5,7 @@ import com.example.crm.repository.INoteRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -15,6 +16,10 @@ public class NoteServiceImpl implements com.example.crm.service.INoteService {
 
     @Override
     public Note createNote(Note n) {
+        n.setId(0);
+        n.setStatus(1);
+        Date timestamp = new Date();
+        n.setTimestamp(timestamp.toString());
         return noteRepo.save(n);
     }
 
@@ -24,9 +29,7 @@ public class NoteServiceImpl implements com.example.crm.service.INoteService {
     }
 
     @Override
-    public Note updateNote(Note note) {
-        return noteRepo.save(note);
-    }
+    public Note updateNote(Note note) { return noteRepo.save(note); }
 
     @Override
     public void deleteNote(int id) {
