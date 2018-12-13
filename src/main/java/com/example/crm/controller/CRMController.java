@@ -22,9 +22,9 @@ public class CRMController {
     INoteService noteService;
 
     public String UserInfoCheck(String template) {
-        String encrypted = Utilities.encrypt("lEle");
+        String encrypted = Utilities.StringEncrypt("lEle");
         System.out.println("Krypteret "+encrypted);
-        String decrypted = Utilities.decrypt(encrypted);
+        String decrypted = Utilities.StringDecrypt(encrypted);
         System.out.println("Dekrypteret "+decrypted);
         if (UserInfo.isLoggedIn) {
             return template;

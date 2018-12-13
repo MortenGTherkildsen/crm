@@ -6,6 +6,7 @@
 
 <h1 th:text="${'Kundeside: ' + customer.FirstName + ' ' + customer.LastName}"></h1>
 <a th:href="${'/custview/' + customer.Id}" class="btn greyBtn">&laquo; Gå tilbage</a>
+<a th:href="${'/newnote/' + customer.Id}" class="btn greyBtn">+ Ny note</a>
 
 <div class="NotesContainer">
     <div class="NoteItem" th:each="note: ${custNotes}" th:id="${note.id}">

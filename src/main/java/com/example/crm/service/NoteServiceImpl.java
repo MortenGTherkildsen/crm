@@ -1,6 +1,7 @@
 package com.example.crm.service;
 
 import com.example.crm.model.Note;
+import com.example.crm.model.Utilities;
 import com.example.crm.repository.INoteRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ public class NoteServiceImpl implements com.example.crm.service.INoteService {
         n.setId(0);
         n.setStatus(1);
         Date timestamp = new Date();
-        n.setTimestamp(timestamp.toString());
+        n.setTimestamp(Utilities.TimestampToDatestamp(timestamp));
         return noteRepo.save(n);
     }
 
