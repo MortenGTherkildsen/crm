@@ -44,7 +44,7 @@ public class Utilities {
         Datestamp += "/" + c.get(Calendar.MONTH);
         Datestamp += " " + c.get(Calendar.YEAR);
 
-        Datestamp += " " + c.get(Calendar.HOUR);
+        Datestamp += " " + c.get(Calendar.HOUR_OF_DAY);
         Datestamp += ":" + c.get(Calendar.MINUTE);
 
         return Datestamp; // Format: d/M Y H:m
