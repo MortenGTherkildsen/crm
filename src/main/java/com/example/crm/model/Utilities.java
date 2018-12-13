@@ -38,12 +38,13 @@ public class Utilities {
     }
 
     public static String TimestampToDatestamp(Date date) {
+        String[] monthDanish = {"jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec"};
         final Calendar c = Calendar.getInstance();
         String Datestamp = "";
 
         c.setTime(date);
-        Datestamp += c.get(Calendar.DATE);
-        Datestamp += "/" + (c.get(Calendar.MONTH)+1);
+        Datestamp += c.get(Calendar.DATE) + " ";
+        Datestamp += monthDanish[c.get(Calendar.MONTH)];
         Datestamp += " " + c.get(Calendar.YEAR);
 
         Datestamp += " " + String.format("%02d", c.get(Calendar.HOUR_OF_DAY));
