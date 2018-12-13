@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fcf7767-8d59-479d-87b0-285a71ac3133" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/crm/model/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/crm/model/Contact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/crm/model/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/crm/model/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/crm/service/ContactServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/crm/service/ContactServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/crm/model/Utilities.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/crm/service/ContactServiceImpl.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,8 +82,8 @@
       <file leaf-file-name="Contact.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/crm/model/Contact.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="127" column="15" selection-start-line="127" selection-start-column="15" selection-end-line="127" selection-end-column="15" />
+            <state relative-caret-position="118">
+              <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
             </state>
           </provider>
         </entry>
@@ -183,7 +178,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -379,12 +374,12 @@
       <workItem from="1544628325021" duration="1268000" />
       <workItem from="1544642661190" duration="1193000" />
       <workItem from="1544693097464" duration="1121000" />
-      <workItem from="1544699046151" duration="7154000" />
+      <workItem from="1544699046151" duration="7522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13028000" />
+    <option name="totallyTimeSpent" value="13396000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
@@ -408,10 +403,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32893" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32893" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26180258" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26180258" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -834,8 +829,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/crm/model/Contact.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="127" column="15" selection-start-line="127" selection-start-column="15" selection-end-line="127" selection-end-column="15" />
+        <state relative-caret-position="118">
+          <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
         </state>
       </provider>
     </entry>

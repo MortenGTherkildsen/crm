@@ -136,7 +136,7 @@ public class Contact {
         return NickName;
     }
 
-    public void setNickName(String nickName) { NickName = Utilities.StringEncrypt(nickName); }
+    public void setNickName(String nickName) { NickName = nickName; }
 
     public String getEmail() {
         return Email;
