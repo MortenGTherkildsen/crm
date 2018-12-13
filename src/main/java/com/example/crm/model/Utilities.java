@@ -9,6 +9,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
+import static java.lang.Integer.parseInt;
+
 public class Utilities {
 
     private static Random rand = new Random((new Date()).getTime());
@@ -44,10 +46,10 @@ public class Utilities {
         Datestamp += "/" + (c.get(Calendar.MONTH)+1);
         Datestamp += " " + c.get(Calendar.YEAR);
 
-        Datestamp += " " + c.get(Calendar.HOUR_OF_DAY);
-        Datestamp += ":" + c.get(Calendar.MINUTE);
+        Datestamp += " " + String.format("%02d", c.get(Calendar.HOUR_OF_DAY));
+        Datestamp += ":" + String.format("%02d", c.get(Calendar.MINUTE));
 
-        return Datestamp; // Format: d/M Y H:m
+        return Datestamp; // Format: dd/MM YYYY HH:nm
     }
 
 }
