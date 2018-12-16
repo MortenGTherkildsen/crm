@@ -8,6 +8,8 @@
     <input type="text" name="FirstName">
     <input type="text" name="LastName">
     <input type="submit" value="Opret kontakt">
+
+    <input th:each="field: ${fields}" type="hidden" th:name="${field}" value="-Tom-"/>
 </form>
 </body>
 </html>

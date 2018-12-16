@@ -17,4 +17,6 @@ public interface IContactService {
 
     List<Contact> fetchAllContacts();
 
+    List<String> contactFields();
+
 }

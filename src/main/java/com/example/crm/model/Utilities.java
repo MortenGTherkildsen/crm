@@ -23,6 +23,10 @@ public class Utilities {
     }
 
     public static String StringDecrypt(String encstr) {
+        if (encstr.equals("") || encstr.equals("null")) {
+            System.out.println("tom");
+            return "";
+        }
         if (encstr.length() > 12) {
             String cipher = encstr.substring(12);
             BASE64Decoder decoder = new BASE64Decoder();

@@ -19,7 +19,7 @@ public class Contact {
     private String LastName;
 
     @Column(name = "nickName")
-    private String NickName;
+    private String NickName = "-Tom-";
 
     @Column(name = "email")
     private String Email;

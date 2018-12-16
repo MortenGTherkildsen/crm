@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
+import java.util.List;
 
 @Controller
 public class CRMController {
@@ -153,7 +154,10 @@ public class CRMController {
     }
 
     @GetMapping("/newContact")
-    public String createnew() {
+    public String createnew(Model model) {
+        List<String> fieldsList = contactService.contactFields();
+        fieldsList.remove("FirstName"); fieldsList.remove("LastName");
+        model.addAttribute("fields", fieldsList);
         return UserInfoCheck("/newcontact");
     }
 
