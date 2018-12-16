@@ -74,6 +74,28 @@ public class CRMController {
         return UserInfoCheck("/custsingleview");
     }
 
+    @GetMapping("/editcust/{custId}")
+    public String editCust(@PathVariable("custId") int custId, Model model) {
+        model.addAttribute("customer", contactService.fetchOneContact(custId));
+        return UserInfoCheck("/editcontact");
+    }
+
+    @PostMapping("/editCust")
+    public String editCust(@ModelAttribute Contact contact) {
+        int CustomerId = 0;
+        if (UserInfo.isLoggedIn) {
+            CustomerId = contact.getId();
+            contactService.updateContact(contact);
+        }
+        return "redirect:/custview/"+CustomerId;
+    }
+
+    @GetMapping("/deletecust/{custId}")
+    public String deleteCust(@PathVariable("custId") int custId) {
+        contactService.deleteContact(custId);
+        return "redirect:/";
+    }
+
     @GetMapping("/newnote/{custId}")
     public String newnote(@PathVariable("custId") int custId, Model model) {
         model.addAttribute("customer", contactService.fetchOneContact(custId));
@@ -111,8 +133,9 @@ public class CRMController {
 
     @PostMapping("/editnote/{id}")
     public String editnote_save(@PathVariable("id") int id, @ModelAttribute Note note, Model model) {
-        int ownerID = noteService.readNote(id).getOwner().getId();
+        int ownerID = 0;
         if (UserInfo.isLoggedIn) {
+            ownerID = noteService.readNote(id).getOwner().getId();
             model.addAttribute(noteService.updateNote(note));
         }
         return "redirect:/readnote/" + ownerID;
@@ -120,8 +143,11 @@ public class CRMController {
 
     @GetMapping("/deletenote/{id}")
     public String deleteNote(@PathVariable("id") int id) {
-        int CustomerId = noteService.readNote(id).getOwner().getId();
-        noteService.deleteNote(id);
+        int CustomerId = 0;
+        if (UserInfo.isLoggedIn) {
+            CustomerId = noteService.readNote(id).getOwner().getId();
+            noteService.deleteNote(id);
+        }
         return "redirect:/readnote/" + CustomerId;
     }
 

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/template :: Head (pageTitle=${'Rediger kontakt'})"></head>
+<body>
+<nav th:replace="fragments/template :: Topmenu (activeMenuItem=${'newcontact'})"></nav>
+
+<form action="/editCust" method="post">
+    <input type="hidden" name="Id" th:value="${customer.Id}"/>
+    <input type="text" name="FirstName" placeholder="Fornavn" th:value="${customer.FirstName}"/>
+    <input type="text" name="LastName" placeholder="Efternavn" th:value="${customer.LastName}"/>
+    <input type="submit" value="Gem ændringer">
+</form>
+</body>
+</html>

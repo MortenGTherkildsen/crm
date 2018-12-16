@@ -7,8 +7,10 @@
 <a href="/" class="btn greyBtn">&laquo; Alle kunder</a>
 <h1 style="clear: both;" th:text="${customer.FirstName + ' ' + customer.LastName}"></h1>
 <a th:href="${'/newnote/' + customer.Id}" class="btn greyBtn">+ Ny note</a>
-
 <a th:href="${'/readnotes/' + customer.Id}" class="btn greyBtn" th:text="${'Noter (' + numNotes + ')'}" th:style="${'display: ' + (numNotes > 0 ? 'block' : 'none') + ';'}"></a>
+<a th:href="${'/editcust/' + customer.Id}" class="btn greyBtn">Rediger kontakt</a>
+<a onclick="javascript:deleteContact(this);" class="btn greyBtn deleteBtn" style="color: #ff0000;">Slet kontakt</a>
+<a th:href="${'/deletecust/' + customer.Id}" class="btn greyBtn confirmBtn" style="display: none;color: #ff0000;text-decoration: underline;">Er du sikker?</a>
 
 <div class="CustomerContainer" style="clear: both;margin-top: 20px;">
     <table cellpadding="2" border="1" width="25%">
@@ -17,5 +19,14 @@
         </tr>
     </table>
 </div>
+
+<script type="text/javascript">
+    function deleteContact(elem) {
+        var parent = elem.parentNode;
+        elem.style.display = "none";
+        var deleteBtn = parent.querySelector('.confirmBtn');
+        deleteBtn.style.display = "block";
+    }
+</script>
 </body>
 </html>

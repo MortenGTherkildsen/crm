@@ -1,6 +1,7 @@
 package com.example.crm.service;
 
 import com.example.crm.model.Contact;
+import com.example.crm.model.Note;
 import com.example.crm.model.Utilities;
 import com.example.crm.repository.IContactRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,9 @@ public class ContactServiceImpl implements IContactService {
 
     @Autowired
     private IContactRepo contactRepo;
+
+    @Autowired
+    INoteService noteService;
 
     @Override
     public Contact createContact(Contact contact) {
@@ -30,6 +34,11 @@ public class ContactServiceImpl implements IContactService {
 
     @Override
     public void deleteContact(int id) {
+        Contact c = this.fetchOneContact(id);
+        List<Note> notes = c.getNotes();
+        for (Note n: notes) {
+            noteService.deleteNote(n.getId());
+        }
         contactRepo.deleteById(id);
     }
 
