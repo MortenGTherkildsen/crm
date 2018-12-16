@@ -4,11 +4,12 @@
 <body>
 <nav th:replace="fragments/template :: Topmenu (activeMenuItem=${'custsingle'})"></nav>
 
-<a th:href="${'/deletenote/' + note.id}" class="btn greyBtn">&laquo; Slet Note</a>
+<a th:href="${'/readnotes/' + customer.Id}" class="btn greyBtn">&laquo; Gå tilbage</a>
 
 <form th:action="${'/editnote/' + note.id}" method="post" style="clear: both;">
-    <input type="hidden" th:name="owner" th:value="${note.owner}" />
+    <input type="hidden" th:name="owner" th:value="${note.owner.Id}" />
     <input type="hidden" name="id" th:value="${note.id}" />
+    <input type="hidden" name="timestamp" th:value="${note.timestamp}"/>
 
     <strong><br>REDIGER NOTE:<br></strong>
     Titel: <input type="text" name="subject" th:value="${note.subject}" placeholder="Notens titel"/><br>

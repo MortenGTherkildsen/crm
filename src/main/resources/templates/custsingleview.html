@@ -15,7 +15,7 @@
 <div class="CustomerContainer" style="clear: both;margin-top: 20px;">
     <table cellpadding="2" border="1" width="25%">
         <tr th:each="fields: ${customFields}">
-            <td th:utext="${'<strong>' + fields + ':</strong><br>INDHOLD'}"></td>
+            <td th:utext="${'<strong>' + fields[0] + ':</strong><br>' + fields[1]}"></td>
         </tr>
     </table>
 </div>

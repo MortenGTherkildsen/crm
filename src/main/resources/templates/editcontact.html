@@ -4,11 +4,19 @@
 <body>
 <nav th:replace="fragments/template :: Topmenu (activeMenuItem=${'newcontact'})"></nav>
 
+<a th:href="${'/custview/' + customer.Id}" class="btn greyBtn">&laquo; Gå tilbage</a>
+
 <form action="/editCust" method="post">
     <input type="hidden" name="Id" th:value="${customer.Id}"/>
-    <input type="text" name="FirstName" placeholder="Fornavn" th:value="${customer.FirstName}"/>
-    <input type="text" name="LastName" placeholder="Efternavn" th:value="${customer.LastName}"/>
-    <input type="submit" value="Gem ændringer">
+    <input type="submit" value="Gem ændringer" class="btn greyBtn">
+    <table width="50%" cellpadding="1" style="clear: both;">
+        <tr th:each="fields: ${customFields}">
+            <td width="125" th:text="${fields[0]}"/>
+            <td>
+                <input type="text" th:name="${fields[0]}" th:placeholder="${fields[0]}" th:value="${fields[1]}"/>
+            </td>
+        </tr>
+    </table>
 </form>
 </body>
 </html>

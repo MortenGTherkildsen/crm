@@ -70,13 +70,14 @@ public class CRMController {
     public String custview(@PathVariable("custId") int custId, Model model) {
         model.addAttribute("customer", contactService.fetchOneContact(custId));
         model.addAttribute("numNotes", contactService.fetchOneContact(custId).getNotes().size());
-        model.addAttribute("customFields", contactService.contactFields());
+        model.addAttribute("customFields", contactService.fetchOneContact(custId).getAllFields());
         return UserInfoCheck("/custsingleview");
     }
 
     @GetMapping("/editcust/{custId}")
     public String editCust(@PathVariable("custId") int custId, Model model) {
         model.addAttribute("customer", contactService.fetchOneContact(custId));
+        model.addAttribute("customFields", contactService.fetchOneContact(custId).getAllFields());
         return UserInfoCheck("/editcontact");
     }
 
@@ -138,7 +139,7 @@ public class CRMController {
             ownerID = noteService.readNote(id).getOwner().getId();
             model.addAttribute(noteService.updateNote(note));
         }
-        return "redirect:/readnote/" + ownerID;
+        return "redirect:/readnotes/" + ownerID;
     }
 
     @GetMapping("/deletenote/{id}")
@@ -148,7 +149,7 @@ public class CRMController {
             CustomerId = noteService.readNote(id).getOwner().getId();
             noteService.deleteNote(id);
         }
-        return "redirect:/readnote/" + CustomerId;
+        return "redirect:/readnotes/" + CustomerId;
     }
 
     @GetMapping("/newContact")

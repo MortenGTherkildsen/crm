@@ -1,6 +1,7 @@
 package com.example.crm.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "customer")
@@ -114,6 +115,45 @@ public class Contact {
                 '}';
     }
 
+    public List getAllFields() {
+        List<String[]> contactFields = new ArrayList<>();
+        String[] data = {"FirstName", this.getFirstName()};
+        contactFields.add(data);
+        String[] data2 = {"LastName", this.getLastName()};
+        contactFields.add(data2);
+        String[] data3 = {"NickName", this.getNickName()};
+        contactFields.add(data3);
+        String[] data4 = {"Email", this.getEmail()};
+        contactFields.add(data4);
+        String[] data5 = {"Phone", this.getPhone()};
+        contactFields.add(data5);
+        String[] data6 = {"CVR", this.getCVR()};
+        contactFields.add(data6);
+        String[] data7 = {"DOB", this.getDOB()};
+        contactFields.add(data7);
+        String[] data8 = {"Adress1", this.getAdress1()};
+        contactFields.add(data8);
+        String[] data9 = {"Adress2", this.getAdress2()};
+        contactFields.add(data9);
+        String[] data10 = {"City", this.getCity()};
+        contactFields.add(data10);
+        String[] data11 = {"PostalCode", this.getPostalCode()};
+        contactFields.add(data11);
+        String[] data12 = {"Country", this.getCountry()};
+        contactFields.add(data12);
+        String[] data13 = {"Website", this.getWebsite()};
+        contactFields.add(data13);
+        String[] data14 = {"Facebook", this.getFacebook()};
+        contactFields.add(data14);
+        String[] data15 = {"Trello", this.getTrello()};
+        contactFields.add(data15);
+        String[] data16 = {"GitHub", this.getGitHub()};
+        contactFields.add(data16);
+        String[] data17 = {"Gmail", this.getGmail()};
+        contactFields.add(data17);
+        return contactFields;
+    }
+
     public int getId() {
         return Id;
     }
@@ -133,121 +173,121 @@ public class Contact {
     public void setLastName(String lastName) { LastName = Utilities.StringEncrypt(lastName); }
 
     public String getNickName() {
-        return NickName;
+        return Utilities.StringDecrypt(NickName);
     }
 
-    public void setNickName(String nickName) { NickName = nickName; }
+    public void setNickName(String nickName) { NickName = Utilities.StringEncrypt(nickName); }
 
     public String getEmail() {
-        return Email;
+        return Utilities.StringDecrypt(Email);
     }
 
     public void setEmail(String email) {
-        Email = email;
+        Email = Utilities.StringEncrypt(email);
     }
 
     public String getPhone() {
-        return Phone;
+        return Utilities.StringDecrypt(Phone);
     }
 
     public void setPhone(String phone) {
-        Phone = phone;
+        Phone = Utilities.StringEncrypt(phone);
     }
 
     public String getCVR() {
-        return CVR;
+        return Utilities.StringDecrypt(CVR);
     }
 
     public void setCVR(String CVR) {
-        this.CVR = CVR;
+        this.CVR = Utilities.StringEncrypt(CVR);
     }
 
     public String getDOB() {
-        return DOB;
+        return Utilities.StringDecrypt(DOB);
     }
 
     public void setDOB(String DOB) {
-        this.DOB = DOB;
+        this.DOB = Utilities.StringEncrypt(DOB);
     }
 
     public String getAdress1() {
-        return Adress1;
+        return Utilities.StringDecrypt(Adress1);
     }
 
     public void setAdress1(String adress1) {
-        Adress1 = adress1;
+        Adress1 = Utilities.StringEncrypt(adress1);
     }
 
     public String getAdress2() {
-        return Adress2;
+        return Utilities.StringDecrypt(Adress2);
     }
 
     public void setAdress2(String adress2) {
-        Adress2 = adress2;
+        Adress2 = Utilities.StringEncrypt(adress2);
     }
 
     public String getCity() {
-        return City;
+        return Utilities.StringDecrypt(City);
     }
 
     public void setCity(String city) {
-        City = city;
+        City = Utilities.StringEncrypt(city);
     }
 
     public String getPostalCode() {
-        return PostalCode;
+        return Utilities.StringDecrypt(PostalCode);
     }
 
     public void setPostalCode(String postalCode) {
-        PostalCode = postalCode;
+        PostalCode = Utilities.StringEncrypt(postalCode);
     }
 
     public String getCountry() {
-        return Country;
+        return Utilities.StringDecrypt(Country);
     }
 
     public void setCountry(String country) {
-        Country = country;
+        Country = Utilities.StringEncrypt(country);
     }
 
     public String getWebsite() {
-        return Website;
+        return Utilities.StringDecrypt(Website);
     }
 
     public void setWebsite(String website) {
-        Website = website;
+        Website = Utilities.StringEncrypt(website);
     }
 
     public String getFacebook() {
-        return Facebook;
+        return Utilities.StringDecrypt(Facebook);
     }
 
     public void setFacebook(String facebook) {
-        Facebook = facebook;
+        Facebook = Utilities.StringEncrypt(facebook);
     }
 
     public String getTrello() {
-        return Trello;
+        return Utilities.StringDecrypt(Trello);
     }
 
     public void setTrello(String trello) {
-        Trello = trello;
+        Trello = Utilities.StringEncrypt(trello);
     }
 
     public String getGitHub() {
-        return GitHub;
+        return Utilities.StringDecrypt(GitHub);
     }
 
     public void setGitHub(String gitHub) {
-        GitHub = gitHub;
+        GitHub = Utilities.StringEncrypt(gitHub);
     }
 
     public String getGmail() {
-        return Gmail;
+        return Utilities.StringDecrypt(Gmail);
     }
 
     public void setGmail(String gmail) {
-        Gmail = gmail;
+        Gmail = Utilities.StringEncrypt(gmail);
     }
 
     public List<Note> getNotes() {
