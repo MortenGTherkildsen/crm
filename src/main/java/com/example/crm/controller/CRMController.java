@@ -45,7 +45,7 @@ public class CRMController {
             return UserInfoCheck("/crmforside");
         } else {
             model.addAttribute("loginError", UserInfo.loginError);
-            return UserInfoCheck("/login");
+            return "/login";
         }
     }
 
